@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แนะนำตัวเอง - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Prompt:wght@300;400;600&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHqT2K2X1PNz9hcS4X7lUE5v4NY7zC0HJ6v9KoA3o/J/savnh9RMDfG39j5xnvhTNsQlO6aQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #180024, #000000);
+      color: white;
+      font-family: 'Kanit', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: transparent;
+      padding: 5px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.5s ease-in-out;
+    }
+    .navbar.scrolled {
+  background-color: transparent; /* ทำให้พื้นหลังโปร่งใส */
+  box-shadow: none; /* ลบเงาออก */
+}
+
+
+    .navbar-brand img {
+      height: 100px;
+      width: auto;
+      transition: transform 0.5s ease;
+    }
+    .navbar-brand img:hover {
+      transform: rotate(360deg);
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-family: 'Prompt', sans-serif;
+      font-weight: bold;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ff6cc9;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 100px;
+    }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-top: 20px;
+      font-family: 'Mitr', cursive;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .about-me {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      color: #ccc;
+      text-align: center;
+      font-family: 'Prompt', sans-serif;
+      animation: slideInUp 1.5s ease-out;
+    }
+    @keyframes slideInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Call-to-Action Button */
+    .cta-button {
+      background: linear-gradient(90deg, #ff6cc9, #c600ff);
+      border: none;
+      border-radius: 50px;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      font-family: 'Kanit', sans-serif;
+      font-weight: bold;
+      color: white;
+      margin-top: 30px;
+      animation: pulse 2s infinite;
+    }
+    .cta-button:hover {
+      background: linear-gradient(90deg, #c600ff, #ff6cc9);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Carousel Styles */
+    .carousel-inner {
+      max-width: 100%;
+      max-height: 500px;
+    }
+
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      .about-me {
+        font-size: 1.1rem;
+      }
+      .cta-button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+      }
+      .carousel-item img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .navbar-brand img {
+        height: 80px;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+      .carousel-item img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="https://youtu.be/fInw31Xf488?si=E2NQppkZCdSlpbf9">
+        <img src="Dog.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">ฉัน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cat.html">เกี่ยวกับฉัน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contes.html">ติดต่อ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Image Slider -->
+  <div class="hero-section">
+    <h1>ผลงาน</h1>
+    
+    <!-- Image Carousel -->
+    <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="kokoko.png" class="d-block w-100" alt="Image 1">
+          <div class="carousel-caption d-none d-md-block">
+            <p>ปลอมตัวไปปราบอสูร</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="plumjai.jpg" class="d-block w-100" alt="Image 2">
+          <div class="carousel-caption d-none d-md-block">
+            <p>รด</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="gojo.png" class="d-block w-100" alt="Image 3">
+          <div class="carousel-caption d-none d-md-block">
+            <p>สู้กับราชาคำสาป</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript for Sticky Navbar -->
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
